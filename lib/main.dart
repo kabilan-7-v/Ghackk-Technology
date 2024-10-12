@@ -16,18 +16,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
-  bool? like1;
-  bool? like2;
-  bool? like3;
-  bool? like4;
-  bool? like5;
-  bool? like6;
-  bool? like7;
-  bool? like8;
-  bool? like9;
-  bool? like10;
-
   bool isLoading = true;
   @override
   void initState() {
@@ -40,7 +28,6 @@ class _MyAppState extends State<MyApp> {
   storefavorites() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    isLoading = false;
     if (prefs.getStringList('likes') == null) {
       prefs.setStringList('likes', [
         '0',
@@ -55,6 +42,22 @@ class _MyAppState extends State<MyApp> {
         '0',
       ]);
     }
+    if (prefs.getStringList('rating') == null) {
+      prefs.setStringList('rating', [
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+        '0',
+      ]);
+    }
+    isLoading = false;
+
     setState(() {});
   }
 

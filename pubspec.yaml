@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.1.2
   like_button: ^2.0.5
   shared_preferences: ^2.3.2
+  flutter_rating_stars: ^1.1.0
 
 dev_dependencies:
   flutter_test:
